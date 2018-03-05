@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sample06.mybatis.MemberMapper">
+
+	<select id="findAll" resultType="sample06.mybatis.MemberPO">
+		select
+			*
+		from MemberTest
+		${_orderby}
+	</select>
+
+	<select id="query1" resultType="hashmap">
+		select m_id from MemberTest t1
+		<trim prefix="where" prefixOverrides="and |or ">
+			<if test="cond.m_id != null and cond.m_id != ''">and m_id &gt; #{cond.m_id}</if>
+		</trim>
+	</select>
+</mapper>
