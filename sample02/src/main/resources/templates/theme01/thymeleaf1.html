@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello!</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/theme01/css/main.css}"/>
+</head>
+<body>
+	<p>Hello, Thymeleaf.</p>
+	<p th:text="${memo1} + ', name=' + ${content.name} + ', getName()=' + ${content.getName()}" />
+	<img th:src="@{/theme01/image/aspire.jpg}" />
+
+	<br />
+
+	<div th:switch="${content.active}">
+		<p th:case="true" th:text="|active=true|" />
+		<p th:case="false" th:text="|active=false|" />
+	</div>
+	<br />
+	
+	<!-- product.id 須為public屬性, public getter()無效 -->
+	<table>
+		<tr th:each="product : ${content.products}">
+			<td th:text="${product.id}"></td>
+			<td th:text="${product.title}"></td>
+			<td th:text="${product.descr}"></td>
+		</tr>
+	</table>
+</body>
+</html>
