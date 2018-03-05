@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<settings>  
+      <!-- 只设置需要的,其他使用默认值 -->  
+      <!-- 开启缓存,默认就是开启的,2层开关,需要在Mapper文件中也指定 cache 标签才会真正使用缓存 -->  
+      <setting name="cacheEnabled" value="true"/>  
+      <!-- 在null时也调用 setter,适应于返回Map,3.2版本以上可用 -->  
+        <setting name="callSettersOnNulls" value="true"/>  
+    </settings>  
+	<typeAliases>
+		<typeAlias alias="Integer" type="java.lang.Integer" />
+		<typeAlias alias="Long" type="java.lang.Long" />
+		<typeAlias alias="HashMap" type="java.util.HashMap" />
+		<typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap" />
+		<typeAlias alias="ArrayList" type="java.util.ArrayList" />
+		<typeAlias alias="LinkedList" type="java.util.LinkedList" />
+	</typeAliases>
+</configuration>
