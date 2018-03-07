@@ -9,10 +9,13 @@ import org.apache.ibatis.session.RowBounds;
 
 @Mapper
 public interface MemberMapper extends CrudMapper<MemberPO, Integer> {
-	MemberPO findOne(Long i);
+	MemberPO selectOne(Long i);
 
-	List<MemberPO> findAll();
+	List<MemberPO> selectAll();
 
-	List<Map> findAll(RowBounds rowBounds, @Param("_orderby") String _orderby);
+	List<Map> selectAll(@Param("_orderby") String orderby, RowBounds rowBounds);
 
+	List<Map> query1(@Param("where") Map map, @Param("_orderby") String orderby, RowBounds rowBounds);
+
+	List<Map> query2(@Param("where") Map map, @Param("_orderby") String orderby, RowBounds rowBounds);
 }
