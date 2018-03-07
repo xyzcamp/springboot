@@ -20,6 +20,9 @@
 				<value>classpath:mybatis/mapper/**/*.xml</value>
 			</list>
 		</property>
+		<property name="plugins">
+			<bean id="paginationInterceptor" class="com.baomidou.mybatisplus.plugins.PaginationInterceptor"/>
+		</property>
 	</bean>
 
 </beans>

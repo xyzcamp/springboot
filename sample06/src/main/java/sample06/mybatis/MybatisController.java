@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.plugins.Page;
+import com.baomidou.mybatisplus.plugins.pagination.Pagination;
 
 @Controller
 public class MybatisController {
@@ -35,7 +37,7 @@ public class MybatisController {
 
 		// 取得全部, 排序分頁
 		{
-			List<MemberPO> members = memberMapper.selectPage(new RowBounds((2 - 1) * 4, 4), null);
+			List<MemberPO> members = memberMapper.selectPage(new Pagination(2,4), null);
 			model.addAttribute("paging", members);
 		}
 
@@ -52,7 +54,7 @@ public class MybatisController {
 		{
 			Map<String, Object> map1 = new HashMap<String, Object>();
 			map1.put("m_id", 3);
-			List<Map> members_query2 = memberMapper.query2(map1, "order by m_id asc", new RowBounds((2 - 1) * 4, 4));
+			List<Map> members_query2 = memberMapper.query2(map1, "order by m_id asc", new RowBounds(2, 4));
 			model.addAttribute("query2", members_query2);
 		}
 

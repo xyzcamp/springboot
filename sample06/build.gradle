@@ -32,6 +32,9 @@ dependencies {
 	compile("com.baomidou:mybatisplus-spring-boot-starter:1.0.5");
 	compile("com.baomidou:mybatis-plus:2.1.9");
 
+	// https://github.com/pagehelper/pagehelper-spring-boot
+//	compile('com.github.pagehelper:pagehelper-spring-boot-starter:1.2.3')
+
 	runtime('mysql:mysql-connector-java')
 
 	compile('org.springframework.boot:spring-boot-starter-web')

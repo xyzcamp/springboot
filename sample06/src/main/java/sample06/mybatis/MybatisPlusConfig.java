@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.plugins.PerformanceInterceptor;
 
-@Configuration
+//@Configuration
 // 扫描dao或者是Mapper接口
 //@MapperScan("com.example*")
 public class MybatisPlusConfig {
@@ -15,7 +15,7 @@ public class MybatisPlusConfig {
 	 * mybatis-plus 分页插件
 	 */
 
-	@Bean
+//	@Bean
 	public PaginationInterceptor paginationInterceptor() {
 		PaginationInterceptor page = new PaginationInterceptor();
 		page.setDialectType("mysql");
