@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.plugins.PerformanceInterceptor;
 
 @Configuration
 // 扫描dao或者是Mapper接口
-@MapperScan("com.example*")
+//@MapperScan("com.example*")
 public class MybatisPlusConfig {
 	/**
 	 * mybatis-plus 分页插件
